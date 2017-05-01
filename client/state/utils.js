@@ -212,7 +212,7 @@ export function createReducer( initialState = null, customHandlers = {}, schema 
 		};
 	}
 
-	return ( state = initialState, action ) => {
+	const reducer = ( state = initialState, action ) => {
 		const { type } = action;
 
 		if ( 'production' !== process.env.NODE_ENV && 'type' in action && ! type ) {
@@ -226,6 +226,11 @@ export function createReducer( initialState = null, customHandlers = {}, schema 
 
 		return state;
 	};
+
+	//used to propagate actions properly when combined in combineReducersWithPersistence
+	reducer.hasCustomPersistence = true;
+
+	return reducer;
 }
 
 /**
