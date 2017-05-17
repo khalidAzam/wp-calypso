@@ -65,20 +65,20 @@ const SpamFilteringSettings = ( {
 		);
 	}
 	return (
-		<FoldableCard header={ header } className="site-settings__spam-filtering site-settings__foldable-card">
+		<FoldableCard header={ header } className="spam-filtering__foldable-card site-settings__foldable-card">
 			<FormFieldset>
-				<div className="spam-filtering-settings__info-link-container site-settings__info-link-container">
-					<InfoPopover >
-						<ExternalLink
-							target="_blank"
-							icon
-							href={ 'https://jetpack.com/features/security/spam-filtering/' }
-						>
-							{ translate( 'Learn more about spam filtering.' ) }
-						</ExternalLink>
-					</InfoPopover>
-				</div>
-				<div className="site-settings__child-settings">
+				<div className="spam-filtering__settings site-settings__child-settings">
+					<div className="spam-filtering__info-link-container site-settings__info-link-container">
+						<InfoPopover >
+							<ExternalLink
+								target="_blank"
+								icon
+								href={ 'https://jetpack.com/features/security/spam-filtering/' }
+							>
+								{ translate( 'Learn more about spam filtering.' ) }
+							</ExternalLink>
+						</InfoPopover>
+					</div>
 					<FormLabel htmlFor="wordpress_api_key">{ translate( 'Your API Key' ) }</FormLabel>
 					<FormTextInput
 						name="wordpress_api_key"
