@@ -12,6 +12,8 @@ import { get, find } from 'lodash';
 import { getPostImage, getExcerptForPost } from './utils';
 import FacebookSharePreview from 'components/share/facebook-share-preview';
 import GooglePlusSharePreview from 'components/share/google-plus-share-preview';
+import LinkedinSharePreview from 'components/share/linkedin-share-preview';
+>>>>>>> add linkedin to preview modal
 import TwitterSharePreview from 'components/share/twitter-share-preview';
 import VerticalMenu from 'components/vertical-menu';
 import { SocialItem } from 'components/vertical-menu/items';
@@ -38,6 +40,7 @@ class SharingPreviewPane extends PureComponent {
 		services: [
 			'facebook',
 			'google_plus',
+			'linkedin',
 			'twitter',
 		]
 	};
@@ -85,6 +88,8 @@ class SharingPreviewPane extends PureComponent {
 				return <FacebookSharePreview { ...previewProps } />;
 			case 'google_plus':
 				return <GooglePlusSharePreview { ...previewProps } />;
+			case 'linkedin':
+				return <LinkedinSharePreview { ...previewProps } />;
 			case 'twitter':
 				return <TwitterSharePreview
 					{ ...previewProps }
