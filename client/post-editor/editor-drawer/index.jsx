@@ -85,6 +85,7 @@ const EditorDrawer = React.createClass( {
 		type: React.PropTypes.string,
 		setPostDate: React.PropTypes.func,
 		onSave: React.PropTypes.func,
+		toggleNestedSidebar: React.PropTypes.func,
 	},
 
 	onExcerptChange: function( event ) {
@@ -333,7 +334,8 @@ const EditorDrawer = React.createClass( {
 					setPostDate={ this.props.setPostDate }
 					site={ this.props.site }
 					status={ postStatus }
-				/>
+					toggleNestedSidebar={ this.props.toggleNestedSidebar }
+			/>
 			</Accordion>
 		);
 	},
