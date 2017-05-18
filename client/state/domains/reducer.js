@@ -10,6 +10,6 @@ import management from './management/reducer';
 import suggestions from './suggestions/reducer';
 
 export default combineReducers( {
-	management
+	management,
 	suggestions
 } );
