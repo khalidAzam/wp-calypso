@@ -81,7 +81,5 @@ function scrollTo( options ) {
 export default scrollTo;
 
 export function scrollToTop() {
-	if ( typeof window !== 'undefined' ) {
-		window.scrollTo( 0, 0 );
-	}
+	scrollTo( { x: 0, y: 0 } );
 }
