@@ -15,7 +15,7 @@ describe( 'scroll-to', () => {
 	useFakeDom();
 
 	before( () => {
-		scrollTo = require( '..' );
+		scrollTo = require( '..' ).default;
 		sinon.spy( window, 'scrollTo' );
 	} );
 

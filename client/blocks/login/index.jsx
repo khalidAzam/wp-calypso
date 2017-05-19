@@ -23,6 +23,7 @@ import VerificationCodeForm from './two-factor-authentication/verification-code-
 import WaitingTwoFactorNotificationApproval from './two-factor-authentication/waiting-notification-approval';
 import { login } from 'lib/paths';
 import Notice from 'components/notice';
+import { scrollToTop } from 'lib/scroll-to';
 
 class Login extends Component {
 	static propTypes = {
@@ -43,6 +44,12 @@ class Login extends Component {
 		if ( ! this.props.twoStepNonce && this.props.twoFactorAuthType && typeof window !== 'undefined' ) {
 			// Disallow access to the 2FA pages unless the user has received a nonce
 			page( login( { isNative: true } ) );
+		}
+	};
+
+	componentWillReceiveProps = ( nextProps ) => {
+		if ( this.props.twoFactorAuthType !== nextProps.twoFactorAuthType ) {
+			scrollToTop();
 		}
 	};
 
